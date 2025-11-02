@@ -11,5 +11,5 @@ app.use(express.json());
 app.use('/api/users',authRouter);
 connectDB();
 app.listen(PORT,()=>{
-	console.log(`server is running on https://localhost:${PORT}`);
+	console.log(`server is running on http://localhost:${PORT}`);
 })

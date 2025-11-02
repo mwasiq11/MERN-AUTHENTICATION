@@ -58,12 +58,14 @@ router.post('/login',async (req,res,register)=>{
 	}
 })
 // get the current user data (Protected route)
-router.get('me',protect,async(req,res,next)=>{
-	res.status(200).json(req.user)
-})
+router.get("/me", protect, async (req, res) => {
+  res.status(200).json(req.user);
+});
 
 // generate JWT tokens
 
 const generateToken=(id)=>{
 	return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:'30d'})
 }
+
+export default router;
